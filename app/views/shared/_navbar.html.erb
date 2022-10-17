@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<div class="container">
+  <a class="navbar-brand" href="/">BOOKING.COM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+
+      <%# USER %>
+      <% if !Current.user %>
+      <li class="nav-item">
+        <a class="nav-link" href="sign_in">LogIn</a>
+      </li>
+   
+
+      <%# ADMIN %>
+      <% elsif logged_in? && current_user.is_admin? %>
+      <li class="nav-item dropdown bg-dark mr-4">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hotel
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/hotels/new">Add New Hotel</a>
+          <a class="dropdown-item" href="/hotels">View All Hotels</a>
+        </div>
+      </li>
+
+
+       <li class="nav-item dropdown bg-dark mr-4">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Room
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/rooms/new">Add New Room</a>
+          <a class="dropdown-item" href="/rooms">View All Rooms</a>
+        </div>
+       </li>
+
+
+       <li class="nav-item dropdown bg-dark mr-4">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Roomtype
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/roomtypes/new">Add New Roomtype</a>
+          <a class="dropdown-item" href="/roomtypes">View All Roomtypes</a>
+        </div>
+       </li>
+
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            All Bookings
+          </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/admins/pending_bookings">Pending for Approval</a>
+              <a class="dropdown-item" href="/admins/confirmed_bookings">Confirmed Bookings</a>
+            </div>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link"> <%= link_to 'Logout', logout_path, method: :delete, data: {"turbo-method": :delete},style: 'position: relative; bottom: 0.5rem' %></a>
+      </li>
+   
+
+       
+      <% else %>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%= Current.user.username.split('@')[0].capitalize%> </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/bookings/index">My Bookings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" > <%= link_to 'Logout', logout_path, method: :delete, data: { "turbo-method": :delete},style: 'color: black; position: relative; left: 2.5rem; bottom: 0.5rem' %> </a>
+        </div>
+        </li>
+
+
+      <% end %>
+
+      
+      
+      
+     
+      
+    </ul>
+    
+  </div>
+  </div>
+</nav>

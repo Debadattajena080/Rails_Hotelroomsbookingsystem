@@ -1,0 +1,19 @@
+<%= render "shared/errors", obj: @roomtype %>
+<%= form_with model: @roomtype do |form| %>
+
+
+    <div class="mt-3">
+        <%= form.label :roomtype %><br>
+        <%= form.text_field :roomtypename , class: 'form-control'%>
+    </div>
+
+    
+    <div class="mt-2">
+        <%= form.label :description %><br>
+        <%= form.text_area :description , class: 'form-control'%>
+    </div>
+
+    <div class="my-3">
+        <%= form.submit class: "btn btn-primary btn-block" %>
+    </div>
+<% end %>

@@ -1,0 +1,10 @@
+<div class="card-container my-4">
+  <h5><%= @roomtype.roomtypename %></h5>
+    <div class="card-body text-primary ">
+      <h5 class="card-title">About this Roomtype</h5>
+      <p class="card-text"><%= @roomtype.description %></p>
+    </div>
+    <div class="border-top" >
+      <%= link_to"Back",roomtypes_path %>
+    </div>
+</div>

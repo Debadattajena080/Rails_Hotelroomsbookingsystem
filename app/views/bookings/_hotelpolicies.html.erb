@@ -1,0 +1,21 @@
+<div class="col-md-9 border rounded shadow mb-4 p-4" style="position:relative; left:8rem">
+    <div class="show-button">
+        <h4 class="border-bottom p-1" >Hotel Policies</h4>
+        <button  onclick="mypolicyFunction()">Show</button>
+    </div>
+    <div class="policy-details" id="myDiv">
+    Check-in &nbsp <b class="border-right p-2"> 12:00 PM </b> &nbsp  Check-out &nbsp <b> 11:00 AM </b>
+    <ul class="mt-3">
+        <li> <p> Couples are welcome. </p> </li>
+        <li> <p> Guests can check in using any local or outstation ID proof <b>(PAN card not accepted)</b>.</p> </li>
+        <li> <p> The hotel reserves the right to deny check-in to guests under suspicious circumstances. </p> </li>
+    </ul>
+
+    </div>
+</div>
+
+<script>
+function mypolicyFunction() {
+    $(".policy-details").toggle();
+}
+</script>

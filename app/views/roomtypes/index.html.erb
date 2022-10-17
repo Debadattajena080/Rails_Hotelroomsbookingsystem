@@ -1,0 +1,14 @@
+<% @roomtypes.each do |roomtype| %>
+
+<div class="card-container my-4">
+  <h5><%= roomtype.roomtypename %></h5>
+  <div class="card-body text-primary ">
+    <h5 class="card-title">About this Roomtype</h5>
+    <p class="card-text"><%= roomtype.description %></p>
+  </div>
+    <div class="border-top pt-3">
+        <%= link_to "Edit Roomtype", edit_roomtype_path(roomtype), class: "mr-4" %>
+        <%= link_to "Delete Roomtype", roomtype_path(roomtype), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %>
+    </div>
+</div>
+<% end %>

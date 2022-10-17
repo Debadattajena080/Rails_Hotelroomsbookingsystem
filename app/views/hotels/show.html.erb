@@ -1,0 +1,23 @@
+<div class="hotel-index border shadow bg-white rounded my-5">
+
+<div class="card ml-4 my-4" style="width: 40rem">
+        <% if @hotel.image.attached? %>
+            <img class="card-img-top" src=" <%= (url_for(@hotel.image)) %> " alt="Card image cap">
+        <% end %>
+</div>
+
+<div class="card-body border-right">
+    <h5 class="font-weight-bold text-primary"><%= @hotel.hotelname  %></h5>
+     <div class="icon-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+        </svg>
+        <span class="text-primary"><b> <%= @hotel.city %> </b></span>
+    </div>
+    
+    <p><%= @hotel.about %></p> 
+    
+</div>
+<div >
+</div>
+</div>

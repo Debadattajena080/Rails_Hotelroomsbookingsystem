@@ -1,0 +1,72 @@
+<% if @hotels.count != 0 %>
+<% @hotels.each do |hotel| %>
+
+<div class="hotel-index border shadow bg-white rounded my-5">
+
+<div class="card ml-4 my-4" style="width: 50rem">
+        <% if hotel.image.attached? %>
+            <img class="card-img-top" src=" <%= (url_for(hotel.image)) %> " alt="Card image cap">
+        <% end %>
+</div>
+
+<div class="card-body border-right">
+    <h5 class="font-weight-bold text-primary"><%= hotel.hotelname  %></h5>
+     <div class="icon-wrap d-flex">
+        <span class="material-symbols-outlined">location_on</span>
+        <span class="pl-1 text-primary"><%= hotel.city %></span>
+    </div>
+    
+    <p class="py-2"><%= hotel.about %></p> 
+    <div class="d-flex">
+    <% if hotel.rooms.where(roomtype_id: 3).count != 0 %>
+    <p class=" text-primary mr-3">Luxury Suite <b><%= hotel.rooms.where(roomtype_id: 3).count %> available </b> </p>
+    <% end %>
+
+    <% if hotel.rooms.where(roomtype_id: 4).count != 0 %>
+    <p class="text-primary">President Suite  <b> <%= hotel.rooms.where(roomtype_id: 4).count %> available </b></p>
+    <% end %>
+    </div>
+
+</div>
+
+
+<div class="button-contianer p-3">
+    <% if logged_in? && current_user.is_admin? %>
+
+    
+    <%= link_to "Edit Hotel", edit_hotel_path(hotel.id), class: "btn btn-primary mb-3" %>
+    <%= link_to "View Rooms", hotel_rooms_path(hotel), class:"btn btn-primary mb-3" %>
+    <%# <%= link_to "Add Rooms", new_hotel_room_path(hotel), class:"btn btn-primary", style:"position: relative; left: 10rem" %>
+    <%= link_to "Delete Hotel", hotel_path(hotel), :method => :delete, data:{confirm: "Are You Sure?" },class:"btn btn-danger"%>
+
+    <% elsif %>
+
+    <%  hotel.rooms.count != 0%>
+     <%= link_to "View Rooms", hotel_rooms_path(hotel), class:"btn btn-primary"%>
+
+    <% else %>
+    <p><b> (&nbsp No Rooms avaliable for booking &nbsp) </b></p>
+    
+    <% end %>
+</div>
+</div>
+    
+
+<% end %>
+<% else %>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h1 class="display-5">No Hotels Found</h1>
+                <p class="lead">Sorry, we couldn't find any hotels matching your search.</p>
+                <hr class="my-4">
+                <p>Try searching again with different keywords.</p>
+                <p class="lead">
+                    <%= link_to "Search Again", root_path, class: "btn btn-primary" %>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

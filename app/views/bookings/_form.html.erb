@@ -1,0 +1,46 @@
+<div class="col-md-9 border rounded shadow mb-4" style="position:relative; left:8rem">
+
+<h4 class="mt-4 border-bottom p-1">Booking Details</h4>
+<%= form_with(model: [@room, @room.bookings.build]) do |f| %>
+
+
+<%= render 'shared/errors', obj: @booking %>
+
+<div class="reservationform">
+    <div class="row">
+        <div class="col-md-6" style="position:relative; left:0rem">
+        <label>Check In</label>
+        <%= f.text_field :start_date  , placeholder:"Start Date", class: "form-control", id:"datepicker" %>
+        </div>
+        <div class="col-md-6" style="position:relative; left:0rem">
+        <label>Check Out</label>
+        <%= f.text_field :end_date, placeholder: "End Date" , class: "form-control", id:"datepicker" %>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6" style="position:relative; left:0rem">
+        <label>No. of Guests </label>
+        <%= f.select :guests, options_for_select([1,2,3,4,5]), {}, {class: "form-control"} %>
+        </div>
+        <div class="col-md-6" style="position:relative; left:0rem">
+        <label>Guest Name</label>
+        <%= f.text_field :guestname, placeholder: "Enter Guest Name", class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6" style="position:relative; left:0rem">
+        <label>Phone Number</label>
+        <%= f.text_field :phone, placeholder: "Mobile Number", class: "form-control"%>
+        </div>
+    </div>
+    
+    <%= f.submit "Book Now", class: "btn btn-primary mt-4 btn-block" %>
+    
+<% end %>
+</div>
+</div>
+
+
+

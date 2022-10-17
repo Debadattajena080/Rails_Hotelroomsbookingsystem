@@ -1,0 +1,21 @@
+
+
+<div class="col-md-9 border rounded shadow mt-4 mb-3 p-3" style="position:relative; left:8rem">
+    <div class="show-button">
+        <h4 class="border-bottom p-1" >Hotel Details</h4>
+        <button  onclick="myFunction()">Show</button>
+    </div>
+    <div class="hotel-details" id="myDiv">
+        <h5> <%= @room.hotel.hotelname %> </h5>
+        <p> <%= @room.hotel.about %> </p>
+        <p><b>Address</b> &nbsp <%= @room.hotel.address %> </p>
+        <p class="text-primary"> <b>Selected category</b> &nbsp <%= @room.roomtype.roomtypename %></p>
+    </div>
+</div>
+
+
+<script>
+function myFunction() {
+    $(".hotel-details").toggle();
+}
+</script>

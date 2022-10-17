@@ -1,0 +1,54 @@
+
+<%= render "shared/errors", obj: @hotel %>
+
+<%= form_with model: @hotel do |form| %>
+
+
+  <div class="mt-3">
+    <%= form.label :hotel_name %><br>
+    <%= form.text_field :hotelname , class: 'form-control'%>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :about %><br>
+    <%= form.text_area :about , class: 'form-control'%>
+  </div>
+
+  
+   <div class="mt-2">
+    <%= form.label :city %><br>
+    <%= form.text_field :city , class: 'form-control'%>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :address %><br>
+    <%= form.text_field :address , class: 'form-control'%>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :longitude %><br>
+    <%= form.text_field :longitude , class: 'form-control'%>
+  </div>
+
+  <div class="mt-2">
+    <%= form.label :latitude %><br>
+    <%= form.text_field :latitude , class: 'form-control'%>
+  </div>
+
+  
+
+  <div class="form-group mt-3">
+  <% if @hotel.image.attached? %>
+    <%= image_tag @hotel.image, style: "width: 200px; display: block" %>
+  <% end %>
+  <%= form.label :image %><br>
+  <%= form.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="my-3">
+    <%= form.submit class: "btn btn-primary btn-block" %>
+  </div>
+  
+ 
+  
+<% end %>

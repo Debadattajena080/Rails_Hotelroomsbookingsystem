@@ -1,0 +1,49 @@
+<% if @bookings.count != 0 %>
+<div class="container border shadow rounded my-5">
+<h4 class="text-center py-4"> Your Bookings </h4>
+
+
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col" style="position: relative; left: 3rem">Hotel Name</th>
+      <th scope="col" >Room Type</th>
+      <th scope="col" >Guests</th>
+      <th scope="col">Check In</th>
+      <th scope="col">Check Out</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+ <% @bookings.each do |booking| %>
+  <tr>
+    
+    <td style="width: 17rem; position: relative right: 5rem; bottom:4rem">  <% if booking.room.image.attached? %>
+                    <img class="card-img-top" src=" <%= (url_for(booking.room.image)) %> " alt="Card image cap">
+                <% end %> </td>
+    
+    <td style="position: relative; top:4rem; left: 1rem"><b><%= booking.room.hotel.hotelname %></b></td>
+    <td style="position: relative; top:4rem"><b><%= booking.room.roomtype.roomtypename %> </b></td>
+    <td style="position: relative; top:4rem; left: 1.5rem"><b><%= booking.guests %></b></td>
+    <td style="position: relative; top:4rem"><b><%= booking.start_date %></b></td>
+    <td style="position: relative; top:4rem"><b><%= booking.end_date %> </b></td>
+    <td><% if booking.is_approved == true %>
+      <span class="badge badge-success" style="position: relative; top:4rem">Approved</span>
+      <% else %>
+      <span class="badge badge-danger" style="position: relative; top:4rem"> Pending</span>
+      <% end %>
+    </td>
+
+  </tr>
+ <% end %>
+
+</tbody>
+</table>
+</div>
+<% else %>
+<div class="container border shadow rounded m-3">
+<h3 style="position: relative; left: 15rem; padding: 4rem"> You have no reservations, <a href="/">Make one ? </a> </h3>
+</div>
+<% end %>
