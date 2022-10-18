@@ -6,7 +6,7 @@
 
 <div class="hotel-index border shadow bg-white rounded mt-3 mb-5">
 
-    <div class="card ml-4 my-4" style="width: 50rem">
+    <div class="card ml-4 my-4" style="width: 20rem;">
         <% if hotel.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(hotel.image)) %> " alt="Card image cap">
         <% end %>
@@ -19,41 +19,39 @@
         <span class="pl-1 text-primary"><%= hotel.city %></span>
         </div>
     
-        <p class="py-2"><%= hotel.about %></p> 
+        <p class="pt-3"><%= hotel.about %></p> 
         <div class="d-flex">
+        <% if hotel.rooms.where(roomtype_id: 1).count != 0 %>
+        <p class=" text-primary mr-3">Luxury Suite <b><%= hotel.rooms.where(roomtype_id: 1).count %> available </b> </p>
+        <% end %>
+
+        <% if hotel.rooms.where(roomtype_id: 2).count != 0 %>
+        <p class="text-primary">Deluxe Room  <b> <%= hotel.rooms.where(roomtype_id: 2).count %> available </b></p>
+        <% end %>
+
         <% if hotel.rooms.where(roomtype_id: 3).count != 0 %>
-        <p class=" text-primary mr-3">Luxury Suite <b><%= hotel.rooms.where(roomtype_id: 3).count %> available </b> </p>
+        <p class="text-primary">President Suite<b> <%= hotel.rooms.where(roomtype_id: 3).count %> available </b></p>
         <% end %>
-
-        <% if hotel.rooms.where(roomtype_id: 4).count != 0 %>
-        <p class="text-primary">President Suite  <b> <%= hotel.rooms.where(roomtype_id: 4).count %> available </b></p>
-        <% end %>
-
-        <% if hotel.rooms.where(roomtype_id: 5).count != 0 %>
-        <p class="text-primary">Deluxe Room  <b> <%= hotel.rooms.where(roomtype_id: 5).count %> available </b></p>
-        <% end %>
+        </div>
     </div>  
-</div>
 
-
-<div class="button-contianer p-3">
-    <% if logged_in? && current_user.is_admin?  && hotel.rooms.count != 0 %>
-
-    
+    <div class="button-contianer px-3 py-3">
+    <% if logged_in? && current_user.is_admin? %>
     <%= link_to "Edit Hotel", edit_hotel_path(hotel.id), class: "btn btn-primary mb-3" %>
     <%= link_to "View Rooms", hotel_rooms_path(hotel), class:"btn btn-primary mb-3" %>
-    <%# <%= link_to "Add Rooms", new_hotel_room_path(hotel), class:"btn btn-primary", style:"position: relative; left: 10rem" %>
     <%= link_to "Delete Hotel", hotel_path(hotel), :method => :delete, data:{confirm: "Are You Sure?" },class:"btn btn-danger"%>
        
     <% elsif  hotel.rooms.count != 0%>
     <%= link_to "View Rooms", hotel_rooms_path(hotel), class:"btn btn-primary"%>
-
     <% else %>
-    
     <p><b> (&nbsp No Rooms avaliable for booking &nbsp) </b></p>
     
     <% end %>
-</div>
+    </div>
+
+
+
+
 </div>
     
 

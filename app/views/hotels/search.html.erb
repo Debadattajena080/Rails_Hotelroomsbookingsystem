@@ -3,7 +3,7 @@
 
 <div class="hotel-index border shadow bg-white rounded my-5">
 
-<div class="card ml-4 my-4" style="width: 50rem">
+<div class="card ml-4 my-4" style="width: 20rem">
         <% if hotel.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(hotel.image)) %> " alt="Card image cap">
         <% end %>
@@ -18,15 +18,19 @@
     
     <p class="py-2"><%= hotel.about %></p> 
     <div class="d-flex">
-    <% if hotel.rooms.where(roomtype_id: 3).count != 0 %>
-    <p class=" text-primary mr-3">Luxury Suite <b><%= hotel.rooms.where(roomtype_id: 3).count %> available </b> </p>
-    <% end %>
-
-    <% if hotel.rooms.where(roomtype_id: 4).count != 0 %>
-    <p class="text-primary">President Suite  <b> <%= hotel.rooms.where(roomtype_id: 4).count %> available </b></p>
-    <% end %>
+        
+        <% if hotel.rooms.where(roomtype_id: 1).count != 0 %>
+        <p class=" text-primary mr-3">Luxury Suite <b><%= hotel.rooms.where(roomtype_id: 1).count %> available </b> </p>
+        <% end %>
+        
+        <% if hotel.rooms.where(roomtype_id: 2).count != 0 %>
+        <p class="text-primary">Deluxe Room  <b> <%= hotel.rooms.where(roomtype_id: 2).count %> available </b></p>
+        <% end %>
+        
+        <% if hotel.rooms.where(roomtype_id: 3).count != 0 %>
+        <p class="text-primary">President Suite <b> <%= hotel.rooms.where(roomtype_id: 3).count %> available </b></p>
+        <% end %>
     </div>
-
 </div>
 
 
@@ -63,7 +67,7 @@
                 <hr class="my-4">
                 <p>Try searching again with different keywords.</p>
                 <p class="lead">
-                    <%= link_to "Search Again", root_path, class: "btn btn-primary" %>
+                    <%= link_to "Home", root_path, class: "btn btn-primary" %>
                 </p>
             </div>
         </div>

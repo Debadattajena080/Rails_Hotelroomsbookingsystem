@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
       redirect_to root_path
       flash[:success] = 'Booking is created successfully and pending for approval'
     else
-      render 'new', status: :unprocessable_entity
+      render 'new'
     end
   end
 

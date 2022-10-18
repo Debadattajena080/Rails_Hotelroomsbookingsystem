@@ -3,7 +3,7 @@
 
 <div class="hotel-index border shadow bg-white rounded my-5">
 
-<div class="card ml-4 my-4" style="width: 70%">
+<div class="card ml-2 my-3" style="width: 20rem">
         <% if room.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(room.image)) %> " alt="Card image cap">
         <% end %>
@@ -12,14 +12,10 @@
 <div class="card-body border-right">
     <div class="icon-wrap">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M22 11v9h-2v-3H4v3H2V4h2v10h8V7h6a4 4 0 0 1 4 4zM8 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/> </g> </svg> 
-    <span class="font-weight-bold text-primary"><%= room.roomtype.roomtypename  %></span>
+    <span class="font-weight-bold text-primary mr-5"><%= room.roomtype.roomtypename  %></span>
+    <span class="mt-1 text-primary border border-success p-3 shadow"><%= room.price %>/- <small> per night </small></span>
     </div>
-    <span class="pl-1 mt-1 text-primary"><%= room.hotel.hotelname %></span>
-
-    <div class="icon-wrap d-flex">
-        <span class="mt-1 material-symbols-outlined">currency_rupee</span>
-        <span class="pl-1 mt-1 text-primary"><%= room.price %>/- <small> per night </small></span>
-    </div>
+    <p class="text-primary"><%= room.hotel.hotelname %> </p>
     <p class="my-3"><%= room.roomtype.description %></p> 
 
    

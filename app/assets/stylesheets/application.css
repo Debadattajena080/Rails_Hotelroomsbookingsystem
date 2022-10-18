@@ -53,9 +53,12 @@ nav .navbar-nav li a:hover{
 }
 
 .hotel-index{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    align-items: base-start;
+    align-items: base-start; */
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     
 }
 .hotel-index:hover{
@@ -64,7 +67,6 @@ nav .navbar-nav li a:hover{
 
 .button-contianer{
     display: flex;
-    width: 38%;
     flex-direction: column;
     justify-content: center;
     background-color: rgba(248, 244, 242, 0.874);

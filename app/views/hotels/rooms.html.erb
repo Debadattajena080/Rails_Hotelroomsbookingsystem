@@ -1,4 +1,4 @@
-
+<% if @rooms.count != 0 %>
  <meta name='turbolinks-visit-control' content='reload'>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
@@ -11,23 +11,21 @@
 
 <div class="hotel-index border shadow bg-white rounded my-5">
 
-    <div class="card ml-4 my-4" style="width: 50rem">
+    <div class="card ml-4 my-4" style="width: 20rem">
         <% if room.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(room.image)) %> " alt="Card image cap">
         <% end %>
     </div>
 
-<div class="card-body border-right">
-    <div class="icon-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M22 11v9h-2v-3H4v3H2V4h2v10h8V7h6a4 4 0 0 1 4 4zM8 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/> </g> </svg> 
-        <span class="font-weight-bold text-primary"><%= room.roomtype.roomtypename  %></span>
-    </div>
+    <div class="card-body border-right">
+        <div class="icon-wrap mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M22 11v9h-2v-3H4v3H2V4h2v10h8V7h6a4 4 0 0 1 4 4zM8 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/> </g> </svg> 
+            <span class="font-weight-bold text-primary"><%= room.roomtype.roomtypename  %></span>
+            <span class="mt-1 ml-5 text-primary border rounde shadow border-success p-3"><%= room.price %>/- <small> per night </small></span>
+        </div>
 
-    <div class="icon-wrap d-flex">
-        <span class="mt-1 material-symbols-outlined">currency_rupee</span>
-        <span class="pl-1 mt-1 text-primary"><%= room.price %>/- <small> per night </small></span>
-    </div>
-    <p class="my-3"><%= room.roomtype.description %></p> 
+         <p class="my-3"><%= room.roomtype.description %></p> 
+        
 
     <% if room.roomtype.roomtypename == "Luxury Suite" %>
    
@@ -63,13 +61,13 @@
     <% else %>
     <div class="icon-wrap d-flex">
         <span class="material-symbols-outlined">wifi</span>
-        <span class="pl-1 pb-2 text-primary">Free Wifi</span>
+        <span class="px-2 pb-2 text-primary">Free Wifi</span>
 
-        <span class="material-symbols-outlined">tv</span>
-        <span class="pl-1 text-primary">TV</span>
+        <span class="pl-3 material-symbols-outlined">tv</span>
+        <span class="px-1 text-primary">TV</span>
 
-        <span class="material-symbols-outlined">elevator</span>
-        <span class="pl-1 text-primary">Elevator</span>
+        <span class="pl-3 material-symbols-outlined">elevator</span>
+        <span class="px-1 text-primary">Elevator</span>
     </div>
     <% end %>
     
@@ -92,3 +90,20 @@
 
 <div id="map" class="my-3" style="width: 58%; height: 250px; position:relative; left: 25rem"></div>
 </div>
+<% else %>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h3 class="display-6">No Rooms Found</h3>
+                <p class="lead">Sorry, we couldn't find any rooms for this hotel.</p>
+                <hr class="my-4">
+                <p>Try searching for something else.</p>
+                <p class="lead">
+                    <a class="btn btn-primary" href="/hotels" role="button">Home</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

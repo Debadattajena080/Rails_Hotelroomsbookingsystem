@@ -8,7 +8,7 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :phone, length: { is: 10 }
-  validates :guestname, presence: true
+  validates :guestname, format: { with: /\A[a-zA-Z0-9]+\z/ }
   validate :overlapping_bookings
 
   def overlapping_bookings

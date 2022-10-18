@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class RoomtypesController < ApplicationController
+
+  before_action :require_admin, only: %i[index new create edit update destroy]
+
   def index
     @roomtypes = Roomtype.all
   end
