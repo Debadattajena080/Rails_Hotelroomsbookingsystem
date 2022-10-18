@@ -38,8 +38,7 @@ user2 = User.create!(
 hotel1 = Hotel.create!(
     hotelname: "The leela Palace",
     about: "Think big when it comes to the Maximum City- this 5-star prperty is laid out amid several acers of
-    landscaped gardens, waterfalls and lotus filled fountains. Located a mere 5 minutes from the Mumbai International airpot,
-    Design, luxury, hospitality, fine dinning, convienence and comfort are the key words that describe the Leela Palace.",
+    landscaped gardens, waterfalls and lotus filled fountains. Located a mere 5 minutes from the Mumbai International airpot." ,
     city: "Mumbai",
     address: "Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051",
     latitude: 19.060850,
@@ -52,7 +51,7 @@ hotel2 = Hotel.create!(
     hotelname: "The JW Marriott Hotel",
     about: "Experience the resplendent JW Marriott Hotel Kolkata,
     a 5-star accommodation with understated elegance and sophistication. 
-    Located 16 kilometers from Netaji Subhash Chandra Bose Airport, our hotel is almost equidistant from the airport and the city's old business district.",
+    Located 16 kilometers from Netaji Subhash Chandra Bose Airport.",
     city: "Kolkata",
     address: "Jawaharlal Nehru Road, Kolkata, West Bengal 700071",
     latitude: 22.553440,
