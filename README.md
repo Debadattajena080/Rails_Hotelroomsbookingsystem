@@ -47,9 +47,6 @@ Search filters will have the following fields:
 
     Number of Guests (Adults and Children)
 
-
-Once select the filtration the relevant results will be displayed with the list of available hotels for the booking. Rooms recommendation by the system will be shown based on the no. of guests.
-
 Interactive Google map to show the exact Homestay location
 
 Integrate Google calendar or some other calendar application on the website to synchronize the booking dates and show the booking of the individual date along with their availability.
