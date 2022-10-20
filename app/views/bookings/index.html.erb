@@ -10,6 +10,7 @@
       <th scope="col" style="position: relative; left: 3rem">Hotel Name</th>
       <th scope="col" >Room Type</th>
       <th scope="col" >Guests</th>
+      <th scope="col" > Rooms </th>
       <th scope="col">Check In</th>
       <th scope="col">Check Out</th>
       <th scope="col">Status</th>
@@ -20,13 +21,14 @@
  <% @bookings.each do |booking| %>
   <tr>
     
-    <td style="width: 17rem; position: relative right: 5rem; bottom:4rem">  <% if booking.room.image.attached? %>
+    <td style="width: 15rem; position: relative right: 5rem; bottom:4rem">  <% if booking.room.image.attached? %>
                     <img class="card-img-top" src=" <%= (url_for(booking.room.image)) %> " alt="Card image cap">
                 <% end %> </td>
     
-    <td style="position: relative; top:4rem; left: 1rem"><b><%= booking.room.hotel.hotelname %></b></td>
+    <td style="position: relative; top:4rem;"><b><%= booking.room.hotel.hotelname %></b></td>
     <td style="position: relative; top:4rem"><b><%= booking.room.roomtype.roomtypename %> </b></td>
-    <td style="position: relative; top:4rem; left: 1.5rem"><b><%= booking.guests %></b></td>
+    <td style="position: relative; top:4rem; left: 1rem"><b><%= booking.guests %></b></td>
+    <td style="position: relative; top:4rem; left: 1rem"><b><%= booking.number_of_room %></b></td>
     <td style="position: relative; top:4rem"><b><%= booking.start_date %></b></td>
     <td style="position: relative; top:4rem"><b><%= booking.end_date %> </b></td>
     <td><% if booking.is_approved == true %>
@@ -47,3 +49,4 @@
 <h3 style="position: relative; left: 15rem; padding: 4rem"> You have no reservations, <a href="/">Make one ? </a> </h3>
 </div>
 <% end %>
+

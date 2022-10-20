@@ -14,11 +14,11 @@
                 <th>Name</th>
                 <th>Phone No. </th>
                 <th>Hotel Name</th>
-                <th>Room id</th>
                 <th>Room Type</th>
                 <th>Check In</th>
                 <th>Check Out</th>
                 <th>Guests</th>
+                <th>Rooms</th>
                 <th>Booking Action</th>
             </tr>
             </thead>
@@ -28,11 +28,11 @@
                 <td><%= booking.user.username %></td>
                 <td><%= booking.phone %></td>
                 <td><%= booking.room.hotel.hotelname %></td>
-                <td class="text-center"><%= booking.room.id %></td>
                 <td><%= booking.room.roomtype.roomtypename %></td>
                 <td><%= booking.start_date %></td>
                 <td><%= booking.end_date %></td>
                 <td class="text-center"><%= booking.guests %></td>
+                <td class="text-center"><%= booking.number_of_room %></td>
                 <td>
                 <%= link_to "Accept", approve_booking_path(booking.id), class:"btn btn-success" %>
                 <%= link_to "Reject", reject_booking_path(booking.id), class:"btn btn-danger" %>

@@ -51,9 +51,13 @@ class HotelsController < ApplicationController
 
   def rooms
     @hotel = Hotel.find(params[:id])
-    @rooms = @hotel.rooms
+    @room1 = @hotel.rooms.find_by(roomtype_id: 1)
+    @room2 = @hotel.rooms.find_by(roomtype_id: 2)
+    @room3 = @hotel.rooms.find_by(roomtype_id: 3)
+  
   end
 
+  
   def search
     @hotels = Hotel.where('city LIKE ?', "%#{params[:q]}%")
   end

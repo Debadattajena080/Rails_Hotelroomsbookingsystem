@@ -14,6 +14,7 @@
                 <th>Check In</th>
                 <th>Check Out</th>
                 <th>Guests</th>
+                <th>Rooms</th>
             </tr>
             </thead>
             <tbody>
@@ -27,8 +28,7 @@
                 <td><%= booking.start_date %></td>
                 <td><%= booking.end_date %></td>
                 <td class="text-center"><%= booking.guests %></td>
-                
-                 
+                <td class="text-center"><%= booking.number_of_room %></td>
                 </tr>
             <% end %>
             </tbody>

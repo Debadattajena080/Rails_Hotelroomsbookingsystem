@@ -61,9 +61,6 @@ nav .navbar-nav li a:hover{
     grid-template-columns: 1fr 3fr 1fr;
     
 }
-.hotel-index:hover{
-    cursor: pointer;
-}
 
 .button-contianer{
     display: flex;
