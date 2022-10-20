@@ -56,13 +56,32 @@
 
   <script>
    
-    flatpickr("#datepicker", {
-      altInput: true,
-      altFormat: "F j, Y",
+    // flatpickr("#datepicker", {
+    //   altInput: true,
+    //   altFormat: "F j, Y",
+    //   dateFormat: "Y-m-d",
+    //   minDate: "today",
+    //   maxDate: new Date().fp_incr(45),
+      
+    // });
+
+    startPicker = flatpickr("#booking_start",{
+     
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      maxDate: new Date().fp_incr(45),
+      onChange: function(selectedDates, dateStr, instance) {
+    endPicker.set('minDate', selectedDates[0]);
+  }
+    });
+
+    endPicker = flatpickr("#booking_end", {
+  
       dateFormat: "Y-m-d",
       minDate: "today",
       maxDate: new Date().fp_incr(45),
     });
+  
 
    
 
