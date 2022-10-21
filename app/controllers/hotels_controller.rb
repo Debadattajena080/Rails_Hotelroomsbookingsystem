@@ -51,10 +51,19 @@ class HotelsController < ApplicationController
 
   def rooms
     @hotel = Hotel.find(params[:id])
+
+    if @hotel.rooms.where(roomtype_id: 1).count > 0
     @room1 = @hotel.rooms.find_by(roomtype_id: 1)
+    end
+    
+    if @hotel.rooms.where(roomtype_id: 2).count > 0
     @room2 = @hotel.rooms.find_by(roomtype_id: 2)
-    @room3 = @hotel.rooms.find_by(roomtype_id: 3)
-  
+    end
+
+    if @hotel.rooms.where(roomtype_id: 3).count > 0
+      @room3 = @hotel.rooms.find_by(roomtype_id: 3)
+    end
+    
   end
 
   

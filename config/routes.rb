@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   post 'sign_in', to: 'sessions#create', as: 'log_in'
   delete 'logout', to: 'sessions#destroy'
 
+
   # Resources
   resources :hotels
   resources :roomtypes

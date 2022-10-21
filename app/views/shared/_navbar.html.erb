@@ -60,14 +60,14 @@
       </li>
 
         <li class="nav-item">
-        <a class="nav-link"> <%= link_to 'Logout', logout_path, method: :delete, data: {"turbo-method": :delete},style: 'position: relative; bottom: 0.5rem' %></a>
+        <a class="nav-link"> <%= link_to 'LOGOUT', logout_path, method: :delete, data: {"turbo-method": :delete},style: 'position: relative; bottom: 0.5rem; margin-left: 10rem', class:"border rounded py-2 px-5" %></a>
       </li>
    
 
        
       <% else %>
        <li class="nav-item dropdown">
-        <a class="login border rounded py-2 px-5 nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%= Current.user.username.split('@')[0].capitalize%> </a>
+        <a class="login border rounded py-2 px-5 nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%= Current.user.username.split('@')[0].upcase %> </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/bookings/index">My Bookings</a>
           <div class="dropdown-divider"></div>

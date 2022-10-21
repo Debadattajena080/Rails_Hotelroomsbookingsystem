@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    @bookings = @user.bookings.order(start_date: :asc)
+    @bookings = @user.bookings.order('created_at DESC')
   end
 
   def new

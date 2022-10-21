@@ -5,9 +5,10 @@
       initMap(<%= @hotel.latitude%>, <%= @hotel.longitude%>);
     });
   </script>
-
+<% if @room1.present? %>
 <div class="hotel-index border shadow bg-white rounded my-5">
     <div class="card ml-4 my-4" style="width: 20rem">
+    
         <% if @room1.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(@room1.image)) %> " alt="Card image cap">
         <% end %>
@@ -45,11 +46,12 @@
         <% end %>
     </div>
 </div>
+<% end %>
 
-
-
+<% if @room2.present? %>
 <div class="hotel-index border shadow bg-white rounded my-5">
     <div class="card ml-4 my-4" style="width: 20rem">
+    
         <% if @room2.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(@room2.image)) %> " alt="Card image cap">
         <% end %>
@@ -87,12 +89,15 @@
         <% end %>
     </div>
 </div>
+<% end %>
 
-
+<% if @room3.present? %>
 <div class="hotel-index border shadow bg-white rounded my-5">
     <div class="card ml-4 my-4" style="width: 20rem">
+    
         <% if @room3.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(@room3.image)) %> " alt="Card image cap">
+            
         <% end %>
     </div>
     <div class="card-body border-right">
@@ -133,6 +138,11 @@
         <%= link_to "Book This Now",new_room_booking_path(@room3.id), class: 'btn btn-primary mb-3'  %>
         <% end %>
     </div>
+<% end %>
+
 </div>
 </div>
 <div id="map" class="my-3" style="width: 58%; height: 250px; position:relative; left: 25rem"></div>
+
+</div>
+</div>
