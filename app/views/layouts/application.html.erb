@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hotelapp</title>
+    <title>Booking.com</title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -68,24 +69,28 @@
       
     // });
 
+
     startPicker = flatpickr("#booking_start",{
-     
       dateFormat: "Y-m-d",
       minDate: "today",
       maxDate: new Date().fp_incr(45),
       onChange: function(selectedDates, dateStr, instance) {
     endPicker.set('minDate', selectedDates[0]);
   }
+  
     });
 
+   
+
     endPicker = flatpickr("#booking_end", {
-  
       dateFormat: "Y-m-d",
       minDate: "today",
       maxDate: new Date().fp_incr(45),
     });
   
 
+
+ 
    
 
   </script>

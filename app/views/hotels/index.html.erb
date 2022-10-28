@@ -2,6 +2,7 @@
 <div class="s002 py-5 mt-3"> 
     <%= render "shared/searchform" %> 
 </div> 
+
 <% @hotels.each do |hotel| %>
 
 <div class="hotel-index border shadow bg-white rounded mt-3 mb-5">
@@ -19,20 +20,25 @@
         <span class="pl-1 text-primary"><%= hotel.city %></span>
         </div>
     
-        <p class="pt-3"><%= hotel.about %></p> 
-        <div class="d-flex">
-        <% if hotel.rooms.where(roomtype_id: 1).count != 0 %>
-        <p class=" text-primary mr-3">Luxury Suite <b><%= hotel.rooms.where(roomtype_id: 1).count %> available </b> </p>
-        <% end %>
+        <p class="pt-1"><%= hotel.about %></p> 
+         <div class="d-flex">
+            <% hotel.rooms.each do |room| %>
+                <% if room.roomtype.roomtypename == "Deluxe Room" %>
+            <p class="text-primary">Deluxe Room   <%= room.total_rooms %> avaliable</p> 
+                
 
-        <% if hotel.rooms.where(roomtype_id: 2).count != 0 %>
-        <p class="text-primary">Deluxe Room  <b> <%= hotel.rooms.where(roomtype_id: 2).count %> available </b></p>
-        <% end %>
+           <% elsif room.roomtype.roomtypename == "Luxury Suite" %>
+            <p class="text-primary">Luxury Suite   <%= room.total_rooms %> avaliable</p>
 
-        <% if hotel.rooms.where(roomtype_id: 3).count != 0 %>
-        <p class="text-primary">President Suite<b> <%= hotel.rooms.where(roomtype_id: 3).count %> available </b></p>
-        <% end %>
+            <% elsif room.roomtype.roomtypename == "President Suite" %>
+            <p class="text-primary">President Suite   <%= room.total_rooms %> avaliable</p> 
+
+            <% else %>
+            <p class="text-primary"> <%= room.roomtype.roomtypename %>  <%= room.total_rooms %> avaliable</p>
+                <% end %>
+             <% end %>   
         </div>
+        
     </div>  
 
     <div class="button-contianer px-3 py-3">

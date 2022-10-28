@@ -4,11 +4,11 @@ class AdminsController < ApplicationController
   before_action :require_admin
 
   def pending_bookings
-    @bookings = Booking.where(is_approved: false)
+    @bookings = Booking.where(is_approved: false).order('created_at DESC')
   end
 
   def confirmed_bookings
-    @bookings = Booking.where(is_approved: true)
+    @bookings = Booking.where(is_approved: true).order('created_at DESC')
   end
 
   def edit
@@ -23,7 +23,7 @@ class AdminsController < ApplicationController
 
   def approve_booking
     @booking = Booking.find(params[:id])
-    if @booking.update_attribute(:is_approved, true)
+    if @booking.update_attribute(:is_approved, true).
       RespondMailer.booking_approved(@booking).deliver_now
       redirect_to admins_pending_bookings_path,
                   flash: { success: 'Booking Approved' }

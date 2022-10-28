@@ -9,6 +9,6 @@ class Room < ApplicationRecord
   has_one_attached :image
 
   validates :price, presence: true, numericality: { greater_than: 0 }
-
+  validates :total_rooms, presence: true, numericality: { greater_than: 0 }
   
 end

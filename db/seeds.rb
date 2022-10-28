@@ -97,142 +97,78 @@ roomtype3 = Roomtype.create!(
 room1 = Room.create!(
     hotel_id: hotel1.id,
     roomtype_id: roomtype1.id,
-    price: 10000
+    price: 10000,
+    total_rooms: 6
 )
 room1.image.attach(io: File.open("app/assets/images/roomseed/room1.jpg"), filename: "room1.jpg")
 
+
 room2 = Room.create!(
     hotel_id: hotel1.id,
-    roomtype_id: roomtype1.id,
-    price: 10000
-)
-room2.image.attach(io: File.open("app/assets/images/roomseed/room1.jpg"), filename: "room1.jpg")
-
-room4 = Room.create!(
-    hotel_id: hotel1.id,
     roomtype_id: roomtype2.id,
-    price: 5000
+    price: 5000,
+    total_rooms: 5
 )
-room4.image.attach(io: File.open("app/assets/images/roomseed/room2.jpg"), filename: "room2.jpg")
-
-room5 = Room.create!(
-    hotel_id: hotel1.id,
-    roomtype_id: roomtype2.id,
-    price: 5000
-)
-room5.image.attach(io: File.open("app/assets/images/roomseed/room2.jpg"), filename: "room2.jpg")
+room2.image.attach(io: File.open("app/assets/images/roomseed/room2.jpg"), filename: "room2.jpg")
 
 room6 = Room.create!(
     hotel_id: hotel1.id,
     roomtype_id: roomtype3.id,
-    price: 15000
+    price: 15000,
+    total_rooms: 4
 )
 room6.image.attach(io: File.open("app/assets/images/roomseed/room3.jpg"), filename: "room3.jpg")
 
-room7 = Room.create!(
-    hotel_id: hotel1.id,
-    roomtype_id: roomtype3.id,
-    price: 15000
-)
-room7.image.attach(io: File.open("app/assets/images/roomseed/room3.jpg"), filename: "room3.jpg")
-
-room8 = Room.create!(
-    hotel_id: hotel1.id,
-    roomtype_id: roomtype3.id,
-    price: 15000
-)
-room8.image.attach(io: File.open("app/assets/images/roomseed/room3.jpg"), filename: "room3.jpg")
 
 # Create Rooms for hotel 2
 room9 = Room.create!(
     hotel_id: hotel2.id,
     roomtype_id: roomtype1.id,
-    price: 10000
-)
-room9.image.attach(io: File.open("app/assets/images/roomseed/room4.jpg"), filename: "room4.jpg")
-
-room10 = Room.create!(
-    hotel_id: hotel2.id,
-    roomtype_id: roomtype1.id,
-    price: 10000
+    price: 10000,
+    total_rooms: 4
 )
 room9.image.attach(io: File.open("app/assets/images/roomseed/room4.jpg"), filename: "room4.jpg")
 
 room11 = Room.create!(
     hotel_id: hotel2.id,
     roomtype_id: roomtype2.id,
-    price: 5000
+    price: 5000,
+    total_rooms: 5
 )
 room11.image.attach(io: File.open("app/assets/images/roomseed/room5.jpg"), filename: "room5.jpg")
-
-room12 = Room.create!(
-    hotel_id: hotel2.id,
-    roomtype_id: roomtype2.id,
-    price: 5000
-)
-room12.image.attach(io: File.open("app/assets/images/roomseed/room5.jpg"), filename: "room5.jpg")
 
 room13 = Room.create!(
     hotel_id: hotel2.id,
     roomtype_id: roomtype3.id,
-    price: 15000
+    price: 15000,
+    total_rooms: 3
 )
 room13.image.attach(io: File.open("app/assets/images/roomseed/room6.jpg"), filename: "room6.jpg")
 
-room14 = Room.create!(
-    hotel_id: hotel2.id,
-    roomtype_id: roomtype3.id,
-    price: 15000
-)
-room14.image.attach(io: File.open("app/assets/images/roomseed/room6.jpg"), filename: "room6.jpg")
 
 # Create Rooms for hotel 3
 room15 = Room.create!(
     hotel_id: hotel3.id,
     roomtype_id: roomtype1.id,
-    price: 10000
+    price: 10000,
+    total_rooms: 8
 )
 room15.image.attach(io: File.open("app/assets/images/roomseed/room7.jpg"), filename: "room7.jpg")
-
-room16 = Room.create!(
-    hotel_id: hotel3.id,
-    roomtype_id: roomtype1.id,
-    price: 10000
-)
-room16.image.attach(io: File.open("app/assets/images/roomseed/room7.jpg"), filename: "room7.jpg")
 
 room17 = Room.create!(
     hotel_id: hotel3.id,
     roomtype_id: roomtype2.id,
-    price: 5000
+    price: 5000,
+    total_rooms: 5
 )
 room17.image.attach(io: File.open("app/assets/images/roomseed/room8.jpg"), filename: "room8.jpg")
-
-room18 = Room.create!(
-    hotel_id: hotel3.id,
-    roomtype_id: roomtype2.id,
-    price: 5000
-)
-room18.image.attach(io: File.open("app/assets/images/roomseed/room8.jpg"), filename: "room8.jpg")
-
-room19 = Room.create!(
-    hotel_id: hotel3.id,
-    roomtype_id: roomtype2.id,
-    price: 5000
-)
-room19.image.attach(io: File.open("app/assets/images/roomseed/room8.jpg"), filename: "room8.jpg")
 
 room20 = Room.create!(
     hotel_id: hotel3.id,
     roomtype_id: roomtype3.id,
-    price: 15000
+    price: 15000,
+    total_rooms: 7
 )
 room20.image.attach(io: File.open("app/assets/images/roomseed/room9.jpg"), filename: "room9.jpg")
 
-room21 = Room.create!(
-    hotel_id: hotel3.id,
-    roomtype_id: roomtype3.id,
-    price: 15000
-)
-room21.image.attach(io: File.open("app/assets/images/roomseed/room9.jpg"), filename: "room9.jpg")
 
