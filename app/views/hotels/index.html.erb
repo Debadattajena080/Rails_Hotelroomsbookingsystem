@@ -23,20 +23,8 @@
         <p class="pt-1"><%= hotel.about %></p> 
          <div class="d-flex">
             <% hotel.rooms.each do |room| %>
-                <% if room.roomtype.roomtypename == "Deluxe Room" %>
-            <p class="text-primary">Deluxe Room   <%= room.total_rooms %> avaliable</p> 
-                
-
-           <% elsif room.roomtype.roomtypename == "Luxury Suite" %>
-            <p class="text-primary">Luxury Suite   <%= room.total_rooms %> avaliable</p>
-
-            <% elsif room.roomtype.roomtypename == "President Suite" %>
-            <p class="text-primary">President Suite   <%= room.total_rooms %> avaliable</p> 
-
-            <% else %>
-            <p class="text-primary"> <%= room.roomtype.roomtypename %>  <%= room.total_rooms %> avaliable</p>
-                <% end %>
-             <% end %>   
+               <p class="text-primary"> <%= room.roomtype.roomtypename %>  <%= room.total_rooms %> avaliable</p>
+            <% end %>
         </div>
         
     </div>  
