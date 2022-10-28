@@ -23,7 +23,7 @@ class AdminsController < ApplicationController
 
   def approve_booking
     @booking = Booking.find(params[:id])
-    if @booking.update_attribute(:is_approved, true).
+    if @booking.update_attribute(:is_approved, true)
       RespondMailer.booking_approved(@booking).deliver_now
       redirect_to admins_pending_bookings_path,
                   flash: { success: 'Booking Approved' }
