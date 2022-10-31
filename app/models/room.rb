@@ -10,5 +10,4 @@ class Room < ApplicationRecord
 
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :total_rooms, presence: true, numericality: { greater_than: 0 }
-  
 end

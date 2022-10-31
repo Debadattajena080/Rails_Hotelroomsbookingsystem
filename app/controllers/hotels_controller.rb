@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class HotelsController < ApplicationController
-
   before_action :require_admin, only: %i[new create edit update destroy]
 
   def index
@@ -52,11 +51,8 @@ class HotelsController < ApplicationController
   def rooms
     @hotel = Hotel.find(params[:id])
     @rooms = @hotel.rooms
-   
-    
   end
 
-  
   def search
     @hotels = Hotel.where('city LIKE ?', "%#{params[:q]}%")
   end

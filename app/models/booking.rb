@@ -9,5 +9,5 @@ class Booking < ApplicationRecord
   validates :end_date, presence: true
   validates :phone, length: { is: 10 }
   validates :guestname, format: { with: /\A[a-zA-Z0-9]+\z/ }
-  
+  validates :phone, numericality: { only_integer: true, message: 'number is invalid' }
 end

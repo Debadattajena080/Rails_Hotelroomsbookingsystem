@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 class RoomsController < ApplicationController
-
   before_action :require_admin, only: %i[index new create edit update destroy]
 
-  
   def index
     @rooms = Room.all.order('hotel_id ASC')
   end

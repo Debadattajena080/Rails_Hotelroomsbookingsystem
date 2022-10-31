@@ -4,10 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_current_user
   before_action :set_no_cache
-  
+
   include SessionsHelper
   include AdminsHelper
-  
 
   def set_current_user
     Current.user = User.find_by(id: session[:user_id]) if session[:user_id]
@@ -33,5 +32,4 @@ class ApplicationController < ActionController::Base
     response.headers['Pragma'] = 'no-cache'
     response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
   end
-  
 end
