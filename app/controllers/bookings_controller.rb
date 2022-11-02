@@ -25,6 +25,8 @@ class BookingsController < ApplicationController
     end
   end
 
+
+
   private
 
   def booking_params
@@ -32,12 +34,6 @@ class BookingsController < ApplicationController
                                     :number_of_room)
   end
 
-  def alter_rooms_after_checkout_date
-    if @booking.end_date < Date.today
-      @room = Room.find(@booking.room_id)
-      @room.update_attribute(:total_rooms, @room.total_rooms += @booking.number_of_room)
-    end
-
-  end
+  
 
 end
