@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-6" style="position:relative; left:0rem">
         <label>No. Of Rooms </label>
-         <%= f.select :number_of_room, options_for_select([1,2,3,4,5]), {}, {class: "form-control"} %>
+        <%= f.select :number_of_room, (1 .. @room.total_rooms), {}, {class: "form-control"} %>
         </div>
     </div>
 

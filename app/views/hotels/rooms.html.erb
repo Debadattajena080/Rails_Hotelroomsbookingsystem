@@ -6,6 +6,8 @@
     });
   </script>
 <% @rooms.each do |room| %>
+<% if room.total_rooms != 0 %>
+    
   <div class="hotel-index border shadow bg-white rounded my-5">
     <div class="card ml-4 my-4" style="width: 20rem">
         <% if room.image.attached? %>
@@ -78,6 +80,7 @@
         <% end %>
     </div>
 </div>
+<% end %>
 <% end %>
 </div>
    

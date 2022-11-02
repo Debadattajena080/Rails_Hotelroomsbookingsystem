@@ -172,3 +172,4 @@ room20 = Room.create!(
 room20.image.attach(io: File.open("app/assets/images/roomseed/room9.jpg"), filename: "room9.jpg")
 
 
+

@@ -24,6 +24,8 @@ class AdminsController < ApplicationController
   def approve_booking
     @booking = Booking.find(params[:id])
     if @booking.update_attribute(:is_approved, true)
+      @room = Room.find(@booking.room_id)
+      @room.update_attribute(:total_rooms, @room.total_rooms -= @booking.number_of_room)
       RespondMailer.booking_approved(@booking).deliver_now
       redirect_to admins_pending_bookings_path,
                   flash: { success: 'Booking Approved' }

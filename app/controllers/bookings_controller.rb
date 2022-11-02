@@ -31,4 +31,13 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date, :user_id, :room_id, :phone, :guests, :guestname,
                                     :number_of_room)
   end
+
+  def alter_rooms_after_checkout_date
+    if @booking.end_date < Date.today
+      @room = Room.find(@booking.room_id)
+      @room.update_attribute(:total_rooms, @room.total_rooms += @booking.number_of_room)
+    end
+
+  end
+
 end

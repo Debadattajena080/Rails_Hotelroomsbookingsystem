@@ -39,10 +39,6 @@ Rails.application.routes.draw do
   resources :roomtypes
   resources :rooms
 
-  #  resources :hotels do
-  #     resources :rooms
-  #   end
-
   resources :rooms do
     resources :bookings, only: %i[new create]
   end
