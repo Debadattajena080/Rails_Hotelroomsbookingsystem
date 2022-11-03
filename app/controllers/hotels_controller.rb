@@ -3,6 +3,7 @@
 class HotelsController < ApplicationController
   before_action :require_admin, only: %i[new create edit update destroy]
 
+ 
   def index
     @hotels = Hotel.all
   end

@@ -5,9 +5,9 @@
 
 <% @hotels.each do |hotel| %>
 
-<div class="hotel-index border shadow bg-white rounded mt-3 mb-5">
+<div class="hotel-index border shadow rounded mt-3 mb-5">
 
-    <div class="card ml-4 my-4" style="width: 20rem;">
+    <div class="card ml-4 my-4" style="width: 23rem;">
         <% if hotel.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(hotel.image)) %> " alt="Card image cap">
         <% end %>
@@ -23,7 +23,7 @@
         <p class="pt-1"><%= hotel.about %></p> 
          <div class="d-flex">
             <% hotel.rooms.each do |room| %>
-               <p class="text-primary"> <%= room.roomtype.roomtypename %>  <%= room.total_rooms %> avaliable</p>
+               <i class="text-primary"> <%= room.roomtype.roomtypename %>  <%= room.total_rooms %> avaliable</i>
             <% end %>
         </div>
         

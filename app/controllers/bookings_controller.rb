@@ -34,6 +34,14 @@ class BookingsController < ApplicationController
                                     :number_of_room)
   end
 
+  def adding_total_rooms_after_end_date
+    @booking = Booking.find(params[:id])
+    @room = Room.find(@booking.room_id)
+    if @booking.end_date < Date.today
+      @room.update_attribute(:total_rooms, @room.total_rooms += @booking.number_of_room)
+    end
+  end
+
   
 
 end
