@@ -9,7 +9,7 @@
 <% if room.total_rooms != 0 %>
     
   <div class="hotel-index border shadow rounded my-5">
-    <div class="card ml-4 my-4" style="width: 20rem">
+    <div class="card ml-4 my-4" style="width: 21rem">
         <% if room.image.attached? %>
             <img class="card-img-top" src=" <%= (url_for(room.image)) %> " alt="Card image cap">
         <% end %>
