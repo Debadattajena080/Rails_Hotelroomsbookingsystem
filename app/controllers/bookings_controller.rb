@@ -5,13 +5,14 @@ class BookingsController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    @bookings = @user.bookings.order('created_at DESC')
+    @bookings = @user.bookings.order('created_at DESC').page(params[:page])
   end
 
   def new
     @room = Room.find(params[:room_id])
     @booking = Booking.new
   end
+
 
   def create
     @room = Room.find(params[:room_id])

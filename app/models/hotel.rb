@@ -6,7 +6,7 @@ class Hotel < ApplicationRecord
 
   has_one_attached :image
 
-  validates :hotelname, presence: true
+  validates :hotelname, presence: true, format: { with: /\A[a-zA-Z0-9]+\z/ }
   validates :about, presence: true
   validates :city, presence: true
   validates :address, presence: true

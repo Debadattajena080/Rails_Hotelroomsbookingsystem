@@ -10,13 +10,21 @@
         <p><b>Address</b> &nbsp <%= @room.hotel.address %> </p>
         <p class="text-primary"> <b>Selected category</b> &nbsp <%= @room.roomtype.roomtypename %></p>
        
+       
     </div>
     
 </div>
 
-
 <script>
 function myFunction() {
     $(".hotel-details").toggle();
+    if ($(".hotel-details").is(":visible")) {
+        $(".show-button button").text("Hide");
+    } else {
+        $(".show-button button").text("Show");
+    }
+    
+
+
 }
 </script>

@@ -20,6 +20,11 @@
   font-family: sans-serif;
  
 }
+
+.main-container{
+  width: 1440px;
+  margin: 0 auto;
+}
  .col-md-6 {
     position: relative;
     left: 15rem;
@@ -37,8 +42,12 @@ nav .navbar-nav li a:hover{
 .navbar-brand {
     color: #01ca20 !important;
     font-weight: bold;
+    padding: 3px 7px;
     font-size: 25px;
-    padding-right: 2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to right, rgb(13, 242, 5), rgb(195, 29, 175)) 1;
+
     }
 
 
@@ -62,7 +71,6 @@ nav .navbar-nav li a:hover{
     /* display: flex;
     flex-direction: row;
     align-items: base-start; */
-
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     
@@ -274,6 +282,23 @@ nav .navbar-nav li a:hover{
   font-weight: bold;
   cursor: pointer;
 }
+.policy-button{
+  display: flex;
+  align-items: center;
+}
+.policy-button button{
+  margin-left: 1rem;
+  background-color: #01ca20;
+  position: relative;
+  left: 65%;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 .policy-details{
   display: none;
@@ -291,3 +316,4 @@ fieldset{
   border: 1px solid #01ca20;
   
 }
+

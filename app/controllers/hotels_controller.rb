@@ -2,7 +2,8 @@
 
 class HotelsController < ApplicationController
   before_action :require_admin, only: %i[new create edit update destroy]
-
+  
+  before_action :require_user_logged_in!, only: %i[rooms]
  
   def index
     @hotels = Hotel.all

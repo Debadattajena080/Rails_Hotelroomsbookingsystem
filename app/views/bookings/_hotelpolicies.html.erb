@@ -1,5 +1,5 @@
 <div class="col-md-9 border rounded shadow mb-4 p-3" style="position:relative; left:8rem">
-    <div class="show-button">
+    <div class="policy-button">
         <h4 class="border-bottom p-1" >Hotel Policies</h4>
         <button  onclick="mypolicyFunction()">Show</button>
     </div>
@@ -17,5 +17,10 @@
 <script>
 function mypolicyFunction() {
     $(".policy-details").toggle();
+    if ($(".policy-details").is(":visible")) {
+        $(".policy-button button").text("Hide");
+    } else {
+        $(".policy-button button").text("Show");
+    }
 }
 </script>

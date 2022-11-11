@@ -4,11 +4,11 @@ class AdminsController < ApplicationController
   before_action :require_admin
 
   def pending_bookings
-    @bookings = Booking.where(is_approved: false).order('created_at DESC')
+    @bookings = Booking.where(is_approved: false).order('created_at DESC').page(params[:page]).per(5)
   end
 
   def confirmed_bookings
-    @bookings = Booking.where(is_approved: true).order('created_at DESC')
+    @bookings = Booking.where(is_approved: true).order('created_at DESC').page(params[:page]).per(5)
   end
 
   def edit

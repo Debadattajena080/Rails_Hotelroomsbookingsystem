@@ -6,7 +6,7 @@
 </div> 
 
 <% @hotels.each do |hotel| %>
-
+<div class="container">
 <div class="hotel-index border shadow rounded mt-3 mb-5">
 
     <div class="card ml-4 my-4" style="width: 23rem;">
@@ -25,7 +25,7 @@
         <p class="pt-1"><%= hotel.about %></p> 
          <div class="d-flex">
             <% hotel.rooms.each do |room| %>
-               <p class="text-primary"> <%= room.roomtype.roomtypename %>  <%= room.total_rooms %> avaliable</p>
+               <p class="text-primary mr-4"> <%= room.roomtype.roomtypename %>  <%= room.total_rooms %> avaliable</p>
             <% end %>
         </div>
         
@@ -46,7 +46,7 @@
 
 
 
-
+</div>
 </div>
     
 

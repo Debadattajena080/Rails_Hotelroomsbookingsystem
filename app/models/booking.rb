@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :room
 
+  paginates_per 3
   validates :guests, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true

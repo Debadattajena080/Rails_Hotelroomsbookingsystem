@@ -1,3 +1,4 @@
+<div class="container">
 <% if @hotels.count != 0 %>
 <% @hotels.each do |hotel| %>
 
@@ -31,7 +32,6 @@
 
     
     <%= link_to "Edit Hotel", edit_hotel_path(hotel.id), class: "btn btn-primary mb-3" %>
-    <%= link_to "View Rooms", hotel_rooms_path(hotel), class:"btn btn-primary mb-3" %>
     <%# <%= link_to "Add Rooms", new_hotel_room_path(hotel), class:"btn btn-primary", style:"position: relative; left: 10rem" %>
     <%= link_to "Delete Hotel", hotel_path(hotel), :method => :delete, data:{confirm: "Are You Sure?" },class:"btn btn-danger"%>
 
@@ -45,8 +45,11 @@
     
     <% end %>
 </div>
+
+
 </div>
-    
+</div>
+
 
 <% end %>
 <% else %>
@@ -64,5 +67,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <% end %>

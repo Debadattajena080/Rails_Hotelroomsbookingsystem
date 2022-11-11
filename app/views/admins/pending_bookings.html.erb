@@ -4,7 +4,7 @@
 </div>
 
 <% else %>
-<div class="container border shadow rounded my-5">
+<div class="border shadow rounded my-5">
     <div class="row">
         <div class="col-md-12">
         <h3 class="my-4 text-center">Pending Bookings</h3>
@@ -25,7 +25,7 @@
             <tbody>
             <% @bookings.each do |booking| %>
                 <tr>
-                <td><%= booking.user.username %></td>
+                <td><%= booking.guestname %></td>
                 <td><%= booking.phone %></td>
                 <td><%= booking.room.hotel.hotelname %></td>
                 <td><%= booking.room.roomtype.roomtypename %></td>
@@ -42,6 +42,9 @@
             </tbody>
         </table>
         </div>
+    </div>
+    <div class="d-flex mb-4" style="justify-content: center; align-item: center">
+        <%= paginate @bookings %>
     </div>
 </div>
 <% end %>
